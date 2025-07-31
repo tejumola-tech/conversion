@@ -1,0 +1,19 @@
+cat <<EOF > .gitignore
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+terraform.tfvars
+*.backup
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Other
+.env
+EOF

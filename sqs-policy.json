@@ -1,0 +1,16 @@
+{
+  "Version": "2012-10-17",
+  "Id": "AllowS3SendMessage",
+  "Statement": [
+    {
+      "Sid": "AllowS3ToSendMessage",
+      "Effect": "Allow",
+      "Principal": { "Service": "s3.amazonaws.com" },
+      "Action": "sqs:SendMessage",
+      "Resource": "arn:aws:sqs:us-east-1:011528261085:convertsaas-input-queue",
+      "Condition": {
+        "ArnLike": { "aws:SourceArn": "arn:aws:s3:::convertsaas-input-bucket" }
+      }
+    }
+  ]
+}
